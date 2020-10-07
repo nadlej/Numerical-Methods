@@ -9,7 +9,7 @@ Matrix = [ [4,1,0,0,0,0,1],
 
 Y = [1,2,3,4,5,6,7]
 
-Answear = [0,0,0,0,0,0,0]
+Answer = [0,0,0,0,0,0,0]
 
 def TranformToUpper():
     for i in range(7):
@@ -31,15 +31,15 @@ def Backubstitution():
 
         for j in range(i+1,7):
             if i != j:
-                sum += Matrix[i][j] * Answear[j]
+                sum += Matrix[i][j] * Answer[j]
 
-        Answear[i] = (Y[i] - sum) / Matrix[i][i]
+        Answer[i] = (Y[i] - sum) / Matrix[i][i]
         i -= 1
 
-def ShowAnswear():
+def ShowAnswer():
     for i in range(7):
-        print("X ", i + 1, "= ",'%.10f' % Answear[i])
+        print("X ", i + 1, "= ",'%.10f' % Answer[i])
 
 TranformToUpper()
 Backubstitution()
-ShowAnswear()
+ShowAnswer()
